@@ -56,5 +56,43 @@ function handleSearchSubmit(event) {
   let searchInput = document.querySelector("#search-form-input");
   searchCity(searchInput.value);
 }
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+function forecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Mon", "Tues", "Wed", "Thur", "Fri", "Sat", "Sun"];
+
+  return days[date.getDay()];
+}
+function getForecast(city) {
+  let apiKey = "4t3b0c0493f4f5e63b225526afa19e0o";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
+  let forecastHtml = "";
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div id="forecast">
+          <div class="day">${forecastDay(day.time)}</div>
+            <img src="${day.condition.icon_url}"class="weather-icon"
+            />
+          <div class="weather-temp">
+            <strong>${Math.round(
+              day.temperature.maximum
+            )}° </strong>  ${Math.round(day.temperature.minimum)}°
+          </div>
+        </div>
+      `;
+    }
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+let searchForm = document.querySelector("#searchForm");
+searchForm.addEventListener("submit", handleSearch);

@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Weather</title>
-    <script
-      src="https://kit.fontawesome.com/766d66a6ff.js"
-      crossorigin="anonymous"
-    ></script>
+
     <link rel="stylesheet" href="src/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -18,7 +15,9 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
-  <body>
+  <body
+    background="https://as2.ftcdn.net/v2/jpg/05/39/04/79/1000_F_539047958_sQ6tTlpC66UGOH1vohKaCuiS0rwZNOR0.jpg"
+  >
     <div class="weather-app">
       <header>
         <form class="search-form" id="search-form">
@@ -35,36 +34,26 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1 id="city" class="weather-app-city"></h1>
+            <h1 id="city" class="weather-app-city">Pretoria</h1>
             <p class="weather-app-details">
-              <span id="time"></span><span id="temp-description"></span> <br />
-              Humidity: <strong id="humidity"></strong> Wind:
-              <strong id="wind"></strong>
+              <span id="time">Monday 14:33</span
+              ><span id="temp-description"> Scattered clouds</span>
+              <br />
+              Humidity: <strong id="humidity">24%</strong> Wind:
+              <strong id="wind"> 2.04km/h</strong>
             </p>
           </div>
           <div class="weather-app-temp-container">
-            <div id="icon"></div>
+            <div id="icon">🌤️</div>
 
-            <div class="weather-app-temp-value" id="weather-temp-value"></div>
-            <div class="weather-app-unit">&deg;C</div>
+            <div class="weather-app-temp-value" id="weather-temp-value">20</div>
+            <div class="weather-app-unit">°C</div>
           </div>
         </div>
       </main>
-      <div class="weather-forecast">
-        <div class="row">
-          <div class="col-2">
-            <div class="weather-forecast-date">Thu</div>
 
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-            />
-            <div class="weather-forecast-temperature">
-              <span class="weather-forecast-temperature-max"> 18° </span>
-              <span class="weather-forecast-temperature-min"> 12° </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="weather-forecast" id="forecast"></div>
+
       <footer>
         Coded by
         <a href="https://github.com/kea-nelly " target="_blank"

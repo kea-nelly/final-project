@@ -1,15 +1,13 @@
 body {
   background: linear-gradient(
-    to top,
-    lightgrey 0%,
-    lightgrey 1%,
-    #e0e0e0 26%,
-    #efefef 48%,
-    #d9d9d9 75%,
-    #bcbcbc 100%
+    90.5deg,
+    rgb(247, 204, 0) 0.2%,
+    rgb(247, 0, 0) 27.3%,
+    rgb(161, 0, 156) 85.5%
   );
   height: 700px;
   font-family: "Roboto", sans-serif;
+  background-position: 0%;
 }
 a {
   color: hotpink;
@@ -107,4 +105,8 @@ main {
 
 .weather-forecast-temperature {
   font-size: 13px;
+}
+
+.weather-forecast {
+  display: flex;
 }
